@@ -5,7 +5,7 @@ $conn = mysqli_connect("localhost", "root", "", "blog");
 if(!$conn){
     die("Connection Failed");
 }
-
-session_start();
-
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
